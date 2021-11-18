@@ -7,6 +7,7 @@ import NonEditableRow from './NonEditableRow';
 export default function PeopleList() {
 
     const [people, setPeople] = useState([]);
+    const [selectToAddName, setSelectToAddName] = useState(false);
     const [editPersonId, setEditPersonId] = useState(null);
     const [editPeopleName, setEditPeopleName] = useState({
         name: "",
@@ -61,6 +62,7 @@ export default function PeopleList() {
             eye_color: "",
             hair_color: ""
         })
+        setSelectToAddName(false);
     }
 
     const handleEditPersonNameClick = (e, person) => {
@@ -120,9 +122,19 @@ export default function PeopleList() {
         setPeople(removeName);
     }
 
+    const handleSelectAddNameToList = () => {
+        setSelectToAddName(true);
+    }
+
+    const handleAddNameCancelOption = () => {
+        setSelectToAddName(false);
+    }
+
     return (
         <div className="main">
-            <AddNameForm handleAddNewPeopleFormSubmit={handleAddNewPeopleFormSubmit} addNewPeople={addNewPeople} handleAddNewPeopleChange={handleAddNewPeopleChange} />
+            <button onClick={handleSelectAddNameToList} className="select-name-button">Select To Add Name</button>
+            {selectToAddName ? (<AddNameForm handleAddNameCancelOption={handleAddNameCancelOption} handleAddNewPeopleFormSubmit={handleAddNewPeopleFormSubmit} addNewPeople={addNewPeople} handleAddNewPeopleChange={handleAddNewPeopleChange} />) : ""}
+
             <table className="table-table">
                 <thead>
                     <tr className="even-row">

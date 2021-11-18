@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 
-export default function AddNameForm ({ handleAddNewPeopleFormSubmit, addNewPeople, handleAddNewPeopleChange}) {
+export default function AddNameForm ({ handleAddNameCancelOption, handleAddNewPeopleFormSubmit, addNewPeople, handleAddNewPeopleChange}) {
     return (
         <form onSubmit={handleAddNewPeopleFormSubmit} className="form-form">
                 <input
@@ -50,6 +50,7 @@ export default function AddNameForm ({ handleAddNewPeopleFormSubmit, addNewPeopl
                     placeholder="Enter Hair Color..."
                 ></input>
                 <button type="submit" className="add-name-button">Submit</button>
+                <button onClick={handleAddNameCancelOption} type="button" className="cancel-name-button">Cancel</button>
             </form>
     )
 }
