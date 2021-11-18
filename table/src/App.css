@@ -59,7 +59,7 @@ td {
 .edit-name-button {
   background-color: orange;
   color: white;
-  padding: 10px;
+  padding: 5px;
   font-size: 20px;
 }
 
@@ -76,4 +76,13 @@ td {
   padding: 10px;
   font-size: 20px;
   margin-left: 15px;
+}
+
+.delete-name-button {
+  background-color: red;
+  color: white;
+  padding: 5px;
+  font-size: 20px;
+  margin-top: 15px;
+  margin-left: 10px;
 }

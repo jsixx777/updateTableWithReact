@@ -114,6 +114,11 @@ export default function PeopleList() {
         setEditPersonId(null);
     }
 
+    const handleRemovePersonFromList = (personId) => {
+        const removeName = people.filter((person) => person.id !== personId);
+
+        setPeople(removeName);
+    }
 
     return (
         <div className="main">
@@ -132,7 +137,7 @@ export default function PeopleList() {
                 <tbody>
                     {people.map((person) => (
                         <Fragment>
-                            {editPersonId === person.id ? (<EditableRow handleCancelNameChange={handleCancelNameChange} handleEditNameFormSubmit={handleEditNameFormSubmit} handleEditPersonNameOnChange={handleEditPersonNameOnChange} />) : (<NonEditableRow handleEditPersonNameClick={handleEditPersonNameClick} person={person} />)}
+                            {editPersonId === person.id ? (<EditableRow handleCancelNameChange={handleCancelNameChange} handleEditNameFormSubmit={handleEditNameFormSubmit} handleEditPersonNameOnChange={handleEditPersonNameOnChange} />) : (<NonEditableRow handleRemovePersonFromList={handleRemovePersonFromList} handleEditPersonNameClick={handleEditPersonNameClick} person={person} />)}
                         </Fragment>
                     ))}
                 </tbody>

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 
-export default function NonEditableRow({ handleEditPersonNameClick, person }) {
+export default function NonEditableRow({ handleRemovePersonFromList, handleEditPersonNameClick, person }) {
     return (
         <tr className="even-row">
             <td>{person.name}</td>
@@ -11,6 +11,7 @@ export default function NonEditableRow({ handleEditPersonNameClick, person }) {
             <td>{person.hair_color}</td>
             <td>
                 <button onClick={(e) => handleEditPersonNameClick(e, person)} className="edit-name-button">Edit Name</button>
+                <button onClick={(e) => handleRemovePersonFromList(person.id)} className="delete-name-button">Delete Name</button>
             </td>
         </tr>
     )
