@@ -55,3 +55,17 @@ td {
   padding: 10px;
   font-size: 20px;
 }
+
+.edit-name-button {
+  background-color: orange;
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.save-name-button {
+  background-color: green;
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+}
