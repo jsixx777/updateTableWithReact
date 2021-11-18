@@ -1,9 +1,10 @@
 import './App.css';
+import PeopleList from './components/PeopleList';
 
 export default function App () {
   return (
     <div className="main">
-      <h3 className="title">Howdy</h3>
+      <PeopleList />
     </div>
   )
 }
