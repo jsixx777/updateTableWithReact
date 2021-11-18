@@ -1,10 +1,10 @@
 import React from 'react';
 import '../App.css';
 
-export default function EditableRow({ handleEditNameFormSubmit, handleEditPersonNameOnChange }) {
+export default function EditableRow({ handleCancelNameChange, handleEditNameFormSubmit, handleEditPersonNameOnChange }) {
     return (
         <div>
-            <form onSubmit={handleEditNameFormSubmit} className="form-form">
+            <form onSubmit={handleEditNameFormSubmit} className="form-edit">
                 <input
                     type="text"
                     // value={addNewPeople.name}
@@ -51,6 +51,7 @@ export default function EditableRow({ handleEditNameFormSubmit, handleEditPerson
                     placeholder="Enter Hair Color..."
                 ></input>
                 <button type="submit" className="save-name-button">Save</button>
+                <button type="button"  onClick={handleCancelNameChange}className="cancel-name-button">Cancel</button>
             </form>
         </div>
     )

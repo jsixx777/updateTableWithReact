@@ -110,6 +110,10 @@ export default function PeopleList() {
         setEditPersonId(null)
     }
 
+    const handleCancelNameChange = () => {
+        setEditPersonId(null);
+    }
+
 
     return (
         <div className="main">
@@ -128,7 +132,7 @@ export default function PeopleList() {
                 <tbody>
                     {people.map((person) => (
                         <Fragment>
-                            {editPersonId === person.id ? (<EditableRow handleEditNameFormSubmit={handleEditNameFormSubmit} handleEditPersonNameOnChange={handleEditPersonNameOnChange} />) : (<NonEditableRow handleEditPersonNameClick={handleEditPersonNameClick} person={person} />)}
+                            {editPersonId === person.id ? (<EditableRow handleCancelNameChange={handleCancelNameChange} handleEditNameFormSubmit={handleEditNameFormSubmit} handleEditPersonNameOnChange={handleEditPersonNameOnChange} />) : (<NonEditableRow handleEditPersonNameClick={handleEditPersonNameClick} person={person} />)}
                         </Fragment>
                     ))}
                 </tbody>
